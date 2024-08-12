@@ -1,0 +1,141 @@
+---
+layout: default
+permalink: /contact
+title: Contact - Elevage chat bengal
+description: Vous recherchez les coordonnées d'un éleveur de chat Bengal dans le département 77 ? Trouvez ci-dessous les adresses et informations de contact des éleveurs de chat Bengal dans cette région.
+keywords: Chat bengal dans le 77
+---
+
+<section class="banner-3">
+    <div class="container">
+        <div class="banner_content">
+            <h1 class="banner_content-title">Nous contacter</h1>
+            <div class="banner_content-links">
+                <span class="banner_content-links--link"><a href="./accueil.html"
+                        class="banner_content-links--active" title="Accueil">Accueil &nbsp;</a></span>
+                <span class="banner_content-links--link"> / </span>
+                <span class="banner_content-links--link"> &nbsp;Contact</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="boxes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 my-2">
+                <div class="boxes_box">
+                    <div class="boxes_box-icon"><i class="fas fa-map-marker-alt boxes_box-icon--i"></i></div>
+                    <h3 class="boxes_box-title"> Nous voir:</h3>
+                    <p class="boxes_box-p">{{site.data.company.address}}</p>
+                </div>
+            </div>
+            <div class="col-md-4 my-2">
+                <a href="mailto:{{site.data.company.email}}" class="link" title="E-mail">
+                    <div class="boxes_box">
+                        <div class="boxes_box-icon"><i class="fas fa-envelope boxes_box-icon--i"></i></div>
+                        <h3 class="boxes_box-title">E-mail:</h3>
+                        <p class="boxes_box-p">{{site.data.company.email}}</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 my-2">
+                <a href="tel:{{site.data.company.phone}}" class="link" title="Phone">
+                    <div class="boxes_box">
+                        <div class="boxes_box-icon"><i class="fas fa-phone-alt boxes_box-icon--i"></i></div>
+                        <h3 class="boxes_box-title">Phone:</h3>
+                        <p class="boxes_box-p">{{site.data.company.phone}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="contact_content">
+                    <h3 class="contact_content-header">Besoin plus d'info ?</h3>
+                    <h2 class="contact_content-title">Veuillez remplir le formulaire ci-dessous !</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact_image mt-3">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact_form">
+                    <form class="form" method="post" id="contactForm" action="{{ site.data.company.url.notify }}">
+                        <input type="hidden" name="lang" value="fr">
+                        <input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+                        <input type="hidden" name="type" value="contact" />
+                        <input type="hidden" name="website" value="{{ site.data.company.website }}" />
+                        <input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+                        <input type="hidden" name="firstName" value="" />
+                        <input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="text" class="contact_form-input" id="name" name="name"
+                                        placeholder="Nom*" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="email" class="contact_form-input" id="email" name="email"
+                                        aria-describedby="emailHelp" placeholder="Email*" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="tel" class="contact_form-input" id="phone" name="phone"
+                                        placeholder="Téléphone">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="text" class="contact_form-input" id="subject" name="subject"
+                                        placeholder="Sujet">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea type="text" class="contact_form-input h-100" id="message" name="message"
+                                        placeholder="Message*" rows="3" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
+                            </div>
+                            <br />
+                            <div id="contact-form-response"></div>
+                            <input style="display: none" type="submit" value="Submit"
+                                class="wpcf7-form-control wpcf7-submit" />
+                        </div>
+                        <div class="checkbox d-flex mt-4">
+                            <input name="condition" type="checkbox"
+                                style="height:2.5rem; width:2.5rem; vertical-align: middle;" class="check" />
+                            <span class="contact_space-form--label text"
+                                style="color: #000 !important; margin-left: 1rem; font-size: 1.3rem;">
+                                En utilisant ce formulaire, vous acceptez le stockage et la gestion
+                                de vos données par ce site *</span>
+                            <i class="fa fa-info-square" aria-hidden="true"></i>
+                        </div>
+                        <button type="submit" value="submit" class="button form-submit contact_form-button">ENVOYER</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="contact_content-map">
+    <div class="container-fluid">
+        <div style="width: 100%" class="map">
+            <iframe class="map-view" width="100%" height="400" frameborder="0" scrolling="no" marginheight="0"
+                marginwidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=%20BH%20Internet,%207%20Avenue%20de%20l'Orme%20%C3%80%20Martin,%2091080%20%C3%89vry-Courcouronnes,%20France+(BH%20Internet)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            </iframe>
+        </div>
+    </div>
+</div>

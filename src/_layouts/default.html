@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  {% include head.html %}
+  <body>
+    {% include navbar.html %}
+
+    {% if page.url == '/' %}
+        {% include slider.html %}
+    {% endif %}
+
+    <div class="">
+        {{ content }}
+    </div>
+
+    {% include footer.html %}
+    <a href="#" id="fixphone" title="up"><i class="fa fa-chevron-up"></i></a>
+  </body>
+</html>
