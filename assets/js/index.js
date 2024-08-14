@@ -26,11 +26,41 @@ function fixNav() {
 $(document).ready(function() {
   function updateCarouselId() {
       if ($(window).width() <= 990) {
-          $('.owl-carousel.owl-theme').attr('id', 'owl');
+          if (!$('#owl').length) { // Check if the id is not already applied
+              $('.owl-carousel.owl-theme').attr('id', 'owl').owlCarousel({
+                loop: true,
+                margin: 10, 
+                nav: false,
+                dots: false,
+                stagePadding: 50, 
+                responsiveClass: true,
+                responsive: {
+                  0: {
+                    items: 1,
+                    nav: false,
+                    stagePadding: 20 
+                  },
+                  600: {
+                    items: 1,
+                    nav: false,
+                    stagePadding: 30 
+                  },
+                  1000: {
+                    items: 1,
+                    nav: false,
+                    loop: false,
+                    stagePadding: 50 
+                  }
+                }
+              });
+          }
       } else {
-        $('.owl-carousel.owl-theme').removeAttr('id')
+          if ($('#owl').length) {
+              $('.owl-carousel.owl-theme').trigger('destroy.owl.carousel').removeAttr('id');
+          }
       }
   }
+
   updateCarouselId();
 
   $(window).resize(function() {
@@ -38,38 +68,6 @@ $(document).ready(function() {
   });
 });
 
-
-$(document).ready(function() {
-  function initOwlCarousel() {
-    $('#owl').owlCarousel({
-      loop: true,
-      margin: 10, 
-      nav: false,
-      dots: false,
-      stagePadding: 50, 
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 1,
-          nav: false,
-          stagePadding: 20 
-        },
-        600: {
-          items: 1,
-          nav: false,
-          stagePadding: 30 
-        },
-        1000: {
-          items: 1,
-          nav: false,
-          loop: false,
-          stagePadding: 50 
-        }
-      }
-    });
-  }
-  initOwlCarousel();
-});
 
 
 function addTitleToLinks() {
