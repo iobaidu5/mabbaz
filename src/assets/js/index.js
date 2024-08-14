@@ -22,3 +22,52 @@ function fixNav() {
         nav.classList.remove('navbar-active');
     }
 }
+
+$(document).ready(function() {
+  function updateCarouselId() {
+      if ($(window).width() <= 990) {
+          $('.owl-carousel.owl-theme').attr('id', 'owl');
+      } else {
+        $('.owl-carousel.owl-theme').removeAttr('id')
+      }
+  }
+  updateCarouselId();
+
+  $(window).resize(function() {
+      updateCarouselId();
+  });
+});
+
+
+$(document).ready(function() {
+  function initOwlCarousel() {
+    $('#owl').owlCarousel({
+      loop: true,
+      margin: 10, 
+      nav: false,
+      dots: false,
+      stagePadding: 50, 
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: false,
+          stagePadding: 20 
+        },
+        600: {
+          items: 1,
+          nav: false,
+          stagePadding: 30 
+        },
+        1000: {
+          items: 1,
+          nav: false,
+          loop: false,
+          stagePadding: 50 
+        }
+      }
+    });
+  }
+  initOwlCarousel();
+});
+
