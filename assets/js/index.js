@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// if ($(window).width() > 990) {
+//   $('.Navbar').addClass('fixedNav');
+// } else {
+//   $('Navbar').removeClass('fixedNav');
+// }
 
 const nav = document.querySelector('.fixedNav');
 window.addEventListener('scroll', fixNav);
