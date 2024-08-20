@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('.Navbar_nav-link');
-  const currentPath = window.location.pathname.replace(/^.*\/([^\/]*)$/, '/$1'); 
+  const currentPath = window.location.pathname.replace(/^.*\/([^\/]*)$/, '/$1');
+  if (currentPath === "/") {
+    if (navLinks.length > 0) {
+      navLinks[0].classList.add('active');
+    }
+    return;
+  }
+
   navLinks.forEach(link => {
     const linkPath = new URL(link.getAttribute('href'), window.location.origin).pathname;
-    
     if (currentPath === linkPath) {
       link.closest('.Navbar_nav-item').classList.add('active');
     }
   });
 });
+
 
 const nav = document.querySelector('.fixedNav');
 window.addEventListener('scroll', fixNav);
